@@ -1,0 +1,74 @@
+.header {
+  font-family: "arial";
+  text-transform: uppercase;
+  font-size: var(--font-size-xs);
+  font-weight: bolder;
+  letter-spacing: 2px;
+  padding: 20px;
+  box-sizing: border-box;
+  color: white;
+  background-color: white;
+}
+
+.headerTop {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--color-accent-light);
+  padding-bottom: 20px;
+}
+
+.unOrdList {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.listItem {
+  cursor: pointer;
+  transition: .2s all ease-in-out;
+  color: var(--color-primary);
+  
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+.listItem::after {
+  content: "";
+  width: 0%;
+  height: .5px;
+  display: block;
+  margin-top: 5px;
+  background-color: var(--color-primary);
+  transition: .2s ease-in-out;
+}
+
+.logo {
+  width: 150px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bookNowBtn {
+  font-family: "arial";
+  text-transform: uppercase;
+  font-size: var(--font-size-xs);
+  border: none;
+  font-weight: 800;
+  letter-spacing: 2px;
+  padding: 15px 30px;
+  cursor: pointer;
+  transition: .2s all ease-in-out;
+  background-color: var(--color-primary);
+  color: white;
+  border: 1px solid white;
+  
+  &:hover {
+    background-color: white;
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+}
