@@ -1,12 +1,12 @@
 /* Font Imports */
 @font-face {
   font-family: "times";
-  src: url("../../public/fonts/times.ttf");
+  src: url("/fonts/times.ttf");
 }
 
 @font-face {
   font-family: "arial";
-  src: url("../../public/fonts/arial.ttf");
+  src: url("/fonts/arial.ttf");
 }
 
 :root {
