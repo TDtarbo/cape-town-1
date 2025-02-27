@@ -2,9 +2,11 @@ import styles from "./header.module.css";
 import logoLight from "../../../assets/images/logo-white.png";
 import logoDark from "../../../assets/images/logo-black.png";
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
-
+  
   const [open, setOpen] = useState(false);
 
   const handleClick = () => {
@@ -21,15 +23,15 @@ const Header = () => {
           <ul className={styles.unOrdList}>
             <li className={styles.listItem}>EN</li>
             <li className={styles.listItem}>
-              <i class="fa-solid fa-phone"></i>
+              <FontAwesomeIcon icon={faPhone} />
             </li>
             <li className={styles.listItem}>
-              <i class="fa-solid fa-envelope"></i>
+              <FontAwesomeIcon icon={faEnvelope} />
             </li>
             <li className={styles.listItem}>News Letter</li>
             <li className={styles.listItem}>Resorts</li>
           </ul>
-          <img className={styles.logo} src={logoDark} alt="" />
+          <img className={styles.logo} src={logoLight} alt="" />
           <button className={styles.bookNowBtn}>Book Now</button>
         </div>
         <div className={styles.headerBottom}>
@@ -48,8 +50,8 @@ const Header = () => {
           <ul className={styles.hamburgerMenuList}>
             <li className={styles.hamburgerMenuItem}>
               <div className={styles.icons}>
-                <i class="fa-solid fa-phone"></i>
-                <i class="fa-solid fa-envelope"></i>
+                <FontAwesomeIcon icon={faPhone} />
+                <FontAwesomeIcon icon={faEnvelope} />
               </div>
               <div>EN</div>
             </li>

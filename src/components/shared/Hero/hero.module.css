@@ -1,0 +1,71 @@
+.parent {
+  height: 85vh;
+  display: flex;
+}
+
+.child {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.child::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0) 40%
+  );
+}
+
+.textContainer {
+  position: absolute;
+  top: 50%;
+  left: 7%;
+  transform: translateY(-50%);
+  width: 30vw;
+  color: white;
+}
+
+.title {
+  font-family: "times";
+  font-weight: 400;
+  font-size: var(--font-size-xl);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.desc {
+  margin-top: 20px;
+  font-family: "arial";
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.btn {
+  margin-top: 80px;
+  padding: 15px 60px;
+  font-family: "arial";
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  font-weight: 600;
+  background-color: transparent;
+  border: none;
+  border: 1px solid white;
+  letter-spacing: 3px;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    background-color: white;
+    color: var(--color-primary);
+  }
+}

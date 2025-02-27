@@ -35,6 +35,7 @@
   --font-size-m: 0.875rem; /* 14px */
   --font-size-l: 0.9375rem; /* 15px */
   --font-size-xl: 1.5rem; /* 24px */
+  --font-size-xxl: 2rem; /* 24px */
 }
 
 * {
@@ -43,5 +44,6 @@
 }
 
 body {
-  background-color: gray;
+  background-color: rgb(231, 231, 231);
+  height: 300vh;
 }

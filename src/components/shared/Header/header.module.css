@@ -7,7 +7,11 @@
   padding: 20px;
   box-sizing: border-box;
   color: white;
-  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
 }
 
 .headerTop {
@@ -28,7 +32,6 @@
 .listItem {
   cursor: pointer;
   transition: .2s all ease-in-out;
-  color: var(--color-primary);
   
   &:hover::after {
     width: 100%;
@@ -41,7 +44,6 @@
   height: .5px;
   display: block;
   margin-top: 5px;
-  background-color: var(--color-primary);
   transition: .2s ease-in-out;
 }
 
@@ -62,8 +64,8 @@
   padding: 15px 30px;
   cursor: pointer;
   transition: .2s all ease-in-out;
-  background-color: var(--color-primary);
-  color: white;
+  color: var(--color-primary);
+  background-color: white;
   border: 1px solid white;
   
   &:hover {
@@ -91,7 +93,7 @@
 
 
 .navListItem {
-  color: var(--color-accent-light);
+  color: white;
   font-weight: 400;
   cursor: pointer;
   transition: .2s ease-in-out;
@@ -102,7 +104,7 @@
   }
 
   &::marker {
-    color: var(--color-primary);
+    color: white;
   }
 }
 
