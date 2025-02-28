@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
-  
   const [open, setOpen] = useState(false);
 
   const handleClick = () => {
