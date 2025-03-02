@@ -1,5 +1,5 @@
 import styles from "./hero.module.css";
-
+import { useRef, useState, useEffect } from "react";
 import HeroChild from "./HeroChild";
 import image1 from "/src/assets/images/hero1.png";
 import image2 from "/src/assets/images/hero3.png";
@@ -29,14 +29,48 @@ const heroData = [
 ];
 
 const HeroContainer = () => {
+  const [visibleChild, setVisibleChild] = useState(0);
+
+  const ref = useRef();
+
+  const handBtnClick = (index) => {
+    setVisibleChild(index); // Set the new visible child index
+  };
+
+  // Scroll to the visible child after the state has been updated
+  useEffect(() => {
+    const element = ref.current;
+    const scrollAmount = (element.scrollWidth * visibleChild) / heroData.length;
+    element.scrollTo({
+      left: scrollAmount,
+      behavior: "smooth",
+    });
+  }, [visibleChild]); // This effect runs whenever the visibleChild state changes
+
   return (
-    <div
-      className={styles.parent}
-      style={{ width: `${heroData.length * 100}%` }}
-    >
-      {heroData.map((data, index) => {
-        return <HeroChild key={index} data={data} />;
-      })}
+    <div className={styles.heroWrapper}>
+      <div ref={ref} className={styles.supParent}>
+        <div
+          className={styles.parent}
+          style={{ width: `${heroData.length * 100}%` }}
+        >
+          {heroData.map((data, index) => (
+            <HeroChild key={index} data={data} />
+          ))}
+        </div>
+      </div>
+
+      <div className={styles.btnContainer}>
+        {heroData.map((item, index) => (
+          <button
+            key={index}
+            onClick={() => handBtnClick(index)}
+            className={`${styles.visibleChildBtn} ${
+              index === visibleChild && styles.selected
+            }`}
+          />
+        ))}
+      </div>
     </div>
   );
 };

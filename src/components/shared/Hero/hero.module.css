@@ -1,3 +1,14 @@
+.heroWrapper {
+  position: relative; /* New wrapper becomes the positioning context */
+  width: 100%;
+}
+
+.supParent {
+  position: relative;
+  overflow-x: hidden; /* Scroll only the images */
+  width: 100%;
+}
+
 .parent {
   height: 85vh;
   display: flex;
@@ -57,15 +68,37 @@
   text-transform: uppercase;
   font-weight: 600;
   background-color: transparent;
-  border: none;
   border: 1px solid white;
   letter-spacing: 3px;
   color: white;
   cursor: pointer;
   transition: 0.2s ease-in-out;
+}
 
-  &:hover {
-    background-color: white;
-    color: var(--color-primary);
-  }
+.btn:hover {
+  background-color: white;
+  color: var(--color-primary);
+}
+
+.btnContainer {
+  position: absolute; /* Positioned relative to .heroWrapper */
+  display: flex;
+  bottom: 10%;
+  left: 50%;
+  gap: 20px;
+  transform: translateX(-50%); /* Adjusted to center horizontally */
+  z-index: 10; /* Ensure it stays above the images */
+}
+
+.visibleChildBtn {
+  cursor: pointer;
+  border: 2px solid white;
+  background-color: transparent;
+  padding: 3px;
+  border-radius: 100%;
+  transition: 0.2s ease-in-out;
+}
+
+.visibleChildBtn.selected {
+  background-color: white;
 }
